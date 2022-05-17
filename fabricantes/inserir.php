@@ -1,3 +1,10 @@
+<?php
+/* Se o botão inserir do formulário for acionado (ou seja, ele passará a estar definido ou existir) */
+if( isset($_POST['inserir']) ){
+    require "../includes/funcoes-fabricantes.php";
+    $nome = filter_input(INPUT_POST,'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
