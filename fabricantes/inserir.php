@@ -3,6 +3,10 @@
 if( isset($_POST['inserir']) ){
     require "../includes/funcoes-fabricantes.php";
     $nome = filter_input(INPUT_POST,'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    inserirFabricante($conexao, $nome);
+
+    header("location:listar.php");//redirecionamento
 }
 ?>
 <!DOCTYPE html>
