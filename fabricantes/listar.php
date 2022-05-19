@@ -42,7 +42,8 @@ $listaDeFabricantes = lerFabricantes($conexao);
                 <td> <?=$fabricante["id"]?></td>
                 <td> <?=$fabricante["nome"]?></td>
                 <td>
-                    <a href="">Atualizar</a> - <a href="">Excluir</a>
+                    <a href="atualizar.php?id=<?=$fabricante["id"]?>">Atualizar</a> - <a href="excluir.php?=<?=$fabricante["id"]?>">Excluir</a>
+                    <!-- estudar :páginas dinâmicas -->
                 </td>
             </tr>
 <?php 

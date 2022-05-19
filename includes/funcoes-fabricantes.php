@@ -31,3 +31,21 @@ function inserirFabricante($conexao, $nome){
     $sql = "INSERT INTO fabricantes(nome) VALUES('$nome')";
     mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
 }
+
+
+function lerUmFabricante($conexao, $id){
+    //montagem do comando SQL com o parâmetro id
+    $sql = "SELECT id, nome FROM fabricantes WHERE id = $id";
+
+    //Execução do comando e armazenamento do resultado
+   $resultado = mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
+
+    //Retornando para fora da função o resultado como array associativo
+    return mysqli_fetch_assoc($resultado);
+
+}
+
+function atualizarUmFabricante($conexao, $nome){
+    $sql = "UPDATE"
+}
+
