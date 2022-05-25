@@ -36,7 +36,7 @@ function lerUmProduto($conexao, $id){
     $sql = "SELECT id, nome, preco, quantidade, descricao, fabricante_id
      FROM produtos WHERE id = $id";
 
-   $resultado = mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
+    $resultado = mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
    
     return mysqli_fetch_assoc($resultado);
 }
@@ -44,8 +44,10 @@ function lerUmProduto($conexao, $id){
 
 
 
-function atualizarUmProduto($conexao, $id, $nome) {
-    $sql = "UPDATE produtos SET nome = '$nome' WHERE id = $id";
+function atualizarProduto($conexao, $id, $nome, $preco, $quantidade, $descricao,
+$fabId) {
+    $sql = "UPDATE produtos SET nome = '$nome', preco = $preco, quantidade = $quantidade, descricao = '$descricao', fabricante_id = $fabId  
+    WHERE id = $id";
     mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
 }
 
@@ -53,4 +55,9 @@ function excluirProduto($conexao, $id){
     $sql = "DELETE FROM produtos WHERE id = $id";
     mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
 
+}
+
+
+function formataMoeda($valor){
+    return "R$".number_format($valor, 2,",",".");
 }
