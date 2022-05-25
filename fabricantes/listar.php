@@ -11,7 +11,8 @@ $listaDeFabricantes = lerFabricantes($conexao);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Fabricantes | SELECT - CRUD com PHP e MySQL </title>
-<link href="../css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -24,9 +25,9 @@ $listaDeFabricantes = lerFabricantes($conexao);
 <div class="container">
     
     <h2>Lendo e carregando todos os fabricantes</h2>
-    <p><a href="inserir.php">Inserir</a></p>    
+    <p><a class="btn btn-outline-success" href="inserir.php">Inserir</a></p>    
 
-    <table>
+    <table class="table table-dark">
         <caption> Lista de Fabricantes </caption>
         <thead>
             <tr>
@@ -42,7 +43,7 @@ $listaDeFabricantes = lerFabricantes($conexao);
                 <td> <?=$fabricante["id"]?></td>
                 <td> <?=$fabricante["nome"]?></td>
                 <td>
-                    <a href="atualizar.php?id=<?=$fabricante["id"]?>">Atualizar</a> - <a href="excluir.php?id=<?=$fabricante["id"]?>">Excluir</a>
+                    <a class=" btn btn-outline-warning" href="atualizar.php?id=<?=$fabricante["id"]?>">Atualizar</a> <a  class="btn btn-outline-danger" href="excluir.php?id=<?=$fabricante["id"]?>">Excluir</a>
                     <!-- estudar :páginas dinâmicas -->
                 </td>
             </tr>
